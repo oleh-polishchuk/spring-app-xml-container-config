@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="car" class="com.geekhub.Car">
+        <constructor-arg ref="wheel"/>
+        <constructor-arg ref="engine"/>
+    </bean>
+
+    <bean id="engine" class="com.geekhub.Engine">
+        <constructor-arg value="1.5"/>
+    </bean>
+
+    <bean id="wheel" class="com.geekhub.Wheel">
+        <constructor-arg ref="tyres"/>
+    </bean>
+
+    <bean id="tyres" class="com.geekhub.Tyres">
+        <constructor-arg index="0" value="Pirelli"/>
+        <constructor-arg index="1" value="4"/>
+    </bean>
+
+</beans>
